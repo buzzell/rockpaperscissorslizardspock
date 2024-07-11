@@ -1,0 +1,115 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--pico-form-element-border-color) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0.25rem 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--pico-form-element-border-color);
+    border-radius: 1.875rem;
+    border: 0.1875rem solid var(--pico-code-background-color);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: monospace;
+}
+
+#app {
+    overflow: auto;
+    height: 100%;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    //background-color: #111;
+}
+
+.status {
+    .win {
+        color: green;
+    }
+    .lose {
+        color: red;
+    }
+}
+
+.blip {
+    width: 100%;
+    height: 190px;
+    position: relative;
+    margin: auto;
+
+    div {
+        opacity: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid var(--pico-primary);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -1rem 0 0 -1rem;
+    }
+    .blip-1 {
+        animation: blip-1 2s ease-out infinite;
+        animation-delay: 0s;
+    }
+    .blip-2 {
+        animation: blip-2 2s ease-out infinite;
+        animation-delay: 0.2s;
+    }
+    .blip-3 {
+        animation: blip-3 2s ease-out infinite;
+        animation-delay: 0.4s;
+    }
+}
+
+@keyframes blip-1 {
+    from {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    95%,
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+@keyframes blip-2 {
+    from {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    95%,
+    100% {
+        transform: scale(4.5);
+        opacity: 0;
+    }
+}
+
+@keyframes blip-3 {
+    from {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    95%,
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

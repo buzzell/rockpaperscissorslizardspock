@@ -1,0 +1,5 @@
+@use '@picocss/pico/scss/pico' with (
+    $theme-color: 'slate'
+);
+
+@import '_base';
